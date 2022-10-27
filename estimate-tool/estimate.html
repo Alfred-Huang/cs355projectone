@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uni Cloud</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link href="estimate.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <nav class="navigation-bar sticky">
+        <div id="company-name">Uni Cloud</div>
+        <div id="overview"><a href="../index.html">Overview</a></div>
+        <div id="products"><a href="../products/product.html">Products</a></div>
+        <div id="questions"><a href="../questions/questions.html">Questions</a></div>
+        <div id="support"><a href="../support/support.html">Support</a></div>
+        <div class="search">
+            <label>
+                <input type="text" class="input" placeholder="Search...">
+            </label>
+            <button class="btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div id="login"><a href="../login/login.html">Login</a></div>
+    </nav>
+    <section class="estimate-section">
+        <div class="estimate-form-section">
+            <div class="country">
+                <p class="country-q">Please select your server location:</p>
+                <div class="country-radio-container">
+                    <ul>
+                        <li>
+                            <input type="radio" id="UnitedState" name="selector" value="UnitedState">
+                            <label for="UnitedState">United State</label>
+
+                            <div class="check"></div>
+                        </li>
+
+                        <li>
+                            <input type="radio" id="European" name="selector" value="European">
+                            <label for="European">European</label>
+
+                            <div class="check"><div class="inside"></div></div>
+                        </li>
+
+                        <li>
+                            <input type="radio" id="Asian" name="selector" value="Asian">
+                            <label for="Asian">Asian</label>
+
+                            <div class="check"><div class="inside"></div></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="products-title">Please select products:</p>
+            <form class="products products-form">
+                <div class="product checkbox-rect">
+                    <input type="checkbox" id="VirtualMachines" name="VirtualMachines" value="Virtual Machines" class="checkbox-rect">
+                    <label for="VirtualMachines">Virtual Machines</label><br>
+                    <select name="core" id="core">
+                        <option value="30">1 Core / 2 Thread</option>
+                        <option value="60">8 Core / 16 Thread</option>
+                        <option value="150">20 Core / 60 Thread</option>
+                        <option value="400">60 Core / 120 Thread</option>
+                    </select>
+                </div>
+                <div class="product checkbox-rect">
+                    <input type="checkbox" id="ObjectStorage" name="ObjectStorage" value="Object Storage" class="checkbox-rect">
+                    <label for="ObjectStorage">Object Storage</label><br>
+                    <select name="space" id="space">
+                        <option value="50">500GB</option>
+                        <option value="100">1TB</option>
+                        <option value="300">10TB</option>
+                        <option value="1000">100TB</option>
+                    </select>
+                </div>
+
+                <div class="product checkbox-rect">
+                    <input type="checkbox" id="DataWarehouse" name="DataWarehouse" value="Data Warehouse">
+                    <label for="DataWarehouse">Data Warehouse</label><br>
+                </div>
+
+                <div class="product checkbox-rect">
+                    <input type="checkbox" id="RelationalDatabase" name="RelationalDatabase" value="Relational Database">
+                    <label for="RelationalDatabase">Relational Database</label><br>
+                    <select name="database" id="database">
+                        <option value="500">Mysql</option>
+                        <option value="500">PostgreSQL</option>
+                    </select>
+                </div>
+
+                <div class="product checkbox-rect">
+                    <input type="checkbox" id="AITraining" name="AITraining" value="AI Training">
+                    <label for="AITraining">AI Training</label><br>
+                </div>
+
+                <div class="product checkbox-rect">
+                    <input type="checkbox" id="CloudGPUs" name="CloudGPUs" value="Cloud GPUs">
+                    <label for="CloudGPUs">Cloud GPUs</label><br>
+                </div>
+
+                <div class="product checkbox-rect">
+                    <input type="checkbox" id="CloudCDN" name="CloudCDN" value="Cloud CDN">
+                    <label for="CloudCDN">Cloud CDN</label><br>
+                </div>
+
+                <div class="product checkbox-rect">
+                    <input type="checkbox" id="AdvancedProtection" name="AdvancedProtection" value="Advanced Protection">
+                    <label for="AdvancedProtection">Advanced Protection</label><br>
+                </div>
+
+                <div class="product checkbox-rect">
+                    <input type="checkbox" id="Operation" name="Operation" value="Operation">
+                    <label for="Operation">Operation</label><br>
+                </div>
+            </form>
+            <p class="total">Total: </p>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <ul>
+                <li class="list-title">Why Uni Cloud</li>
+                <li class="list-content">Choosing Uni Cloud</li>
+                <li class="list-content">Customers experiment</li>
+                <li class="list-content">Cloud Infrastructure</li>
+                <li class="list-content">Certifications</li>
+                <li class="list-content">Blog</li>
+            </ul>
+            <ul>
+                <li class="list-title">Products and pricing</li>
+                <li class="list-content">Uni Cloud pricing</li>
+                <li class="list-content">Education pricing</li>
+                <li class="list-content">Organization pricing</li>
+                <li class="list-content">See all products</li>
+            </ul>
+            <ul>
+                <li class="list-title">Engage</li>
+                <li class="list-content">Contact sales</li>
+                <li class="list-content">Events</li>
+                <li class="list-content">Podcasts</li>
+                <li class="list-content">Follow on Twitter</li>
+                <li class="list-content">Uni Cloud on YouTube</li>
+                <li class="list-content">Uni Cloud Community</li>
+            </ul>
+        </div>
+        <hr class="footer-divide-line">
+        <div id="author">
+            <p>By Zhicheng Huang</p>
+        </div>
+    </footer>
+</div>
+<script src="estimate.js"></script>
+</body>
+</html>

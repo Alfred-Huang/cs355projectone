@@ -1,0 +1,314 @@
+:root {
+    --info-font-family-base: Georgia;
+    --line-height: 28px;
+    --title-font-size: 24px;
+    --acitivity-box-width: 350px;
+    --acitivity-text-color: #a2a2a2;
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+}
+
+/* Container*/
+.container{
+    max-width: 100%;
+    display: grid;
+    grid-template-areas:
+        'navigation-bar '
+        'questions-section'
+        'footer';
+}
+
+/* Navigation section */
+.navigation-bar{
+    grid-area: navigation-bar;
+    display: flex;
+    border-bottom: 1px gray solid;
+    gap: 10vw ;
+    height: 35px;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.sticky {
+    top:0;
+    border-top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+}
+
+.navigation-bar a{
+    text-decoration: none;
+    color: #a5a5a5;
+}
+
+#company-name{
+    width: 150px;
+    font-size: 22px;
+
+}
+
+#login{
+    width: 300px;
+}
+
+
+/* -----------------Search box----------------------------- */
+.search {
+    width: 140px;
+    position: relative;
+    height: 16px;
+    box-sizing: border-box;
+}
+
+.search .input {
+    background-color: #fff;
+    border: 1px gray solid;
+    font-size: 12px;
+    padding: 15px;
+    height: 12px;
+    width: 12px;
+    transition: width 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px gray solid;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 32px;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn:focus,
+.input:focus {
+    outline: none;
+}
+
+.search.active .input {
+    width: 120px;
+}
+
+.search.active .btn {
+    transform: translateX(118px);
+}
+
+.questions-section{
+    grid-area: questions-section;
+    display: flex;
+    justify-content: center;
+}
+
+.questions-container{
+    margin-top: 70px;
+    width: 50%;
+    height: 1500px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.questions{
+    display: flex;
+    flex-direction: column;
+}
+
+.questions-list-title{
+    font-size: 36px;
+    font-family: Roboto, monospace;
+    color: #aeaeae;
+}
+
+.questions-submit-container{
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-around;
+}
+
+.questions-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+}
+
+.question-form-title{
+    font-size: 24px;
+    color: #aeaeae;
+}
+
+.faq {
+    background-color: transparent;
+    border: 1px solid #9fa4a8;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+    width: 80%;
+}
+
+.faq.active {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq.active::before,
+.faq.active::after {
+    font-family: Roboto, monospace;
+    color: #2ecc71;
+    font-size: 7rem;
+    position: absolute;
+    opacity: 0.2;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+}
+
+.faq.active::before {
+    color: #3498db;
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);
+}
+
+.faq-title {
+    margin: 0 35px 0 0;
+}
+
+.faq-text {
+    display: none;
+    margin: 30px 0 0;
+    overflow-wrap: break-word;
+    line-height: 21px;
+}
+
+.faq.active .faq-text {
+    display: block;
+}
+
+.faq-toggle {
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+}
+
+.faq-toggle:focus {
+    outline: 0;
+}
+
+.faq-toggle .fa-times {
+    display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+    color: #fff;
+    display: block;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+    display: none;
+}
+
+.faq.active .faq-toggle {
+    background-color: #9fa4a8;
+}
+
+.questions-form input[type=text], select, textarea {
+    width: 80%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+.questions-form input[type=submit] {
+    background-color: #949494;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 80%;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+.questions-form input[type=submit]:hover {
+    background-color: #999999;
+}
+
+.questions-form input[type=text], select, textarea:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.footer{
+    margin-top: 50px;
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 2px solid #e0e0e0;
+}
+
+.footer-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-container > ul{
+    list-style: none;
+}
+
+.list-title{
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Adobe Devanagari", monospace;
+}
+
+.list-content{
+    font-size: 14px;
+    line-height: 32px;
+    font-family: "Adobe Devanagari", monospace;
+}
+
+.footer-divide-line{
+    width: 100%;
+    border: 1px solid #e0e0e0;
+}
+
+#author{
+    font-size: 30px;
+    text-align: center;
+}

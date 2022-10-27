@@ -1,0 +1,470 @@
+:root {
+    --info-font-family-base: Georgia;
+    --line-height: 28px;
+    --title-font-size: 24px;
+    --acitivity-box-width: 350px;
+    --acitivity-text-color: #a2a2a2;
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+}
+
+/* Container*/
+.container{
+    max-width: 100%;
+    display: grid;
+    grid-template-areas:
+        'navigation-bar '
+        'intro-info'
+        'some-activity'
+        'products-info-intro'
+        'cloud-computing-intro-section'
+        'footer';
+}
+
+/* Navigation section */
+.navigation-bar{
+    grid-area: navigation-bar;
+    display: flex;
+    border-bottom: 1px gray solid;
+    gap: 10vw ;
+    height: 35px;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.sticky {
+    top:0;
+    border-top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+}
+
+.navigation-bar a{
+    text-decoration: none;
+    color: #a5a5a5;
+}
+
+#company-name{
+    width: 150px;
+    font-size: 22px;
+
+}
+
+#login{
+    width: 300px;
+}
+
+
+/* -----------------Search box----------------------------- */
+.search {
+    width: 140px;
+    position: relative;
+    height: 16px;
+    box-sizing: border-box;
+}
+
+.search .input {
+    background-color: #fff;
+    border: 1px gray solid;
+    font-size: 12px;
+    padding: 15px;
+    height: 12px;
+    width: 12px;
+    transition: width 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px gray solid;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 32px;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn:focus,
+.input:focus {
+    outline: none;
+}
+
+.search.active .input {
+    width: 120px;
+}
+
+.search.active .btn {
+    transform: translateX(118px);
+}
+
+
+ /*Content Section*/
+/* -----------------Introduction Info----------------------------- */
+.intro-info{
+    grid-area: intro-info;
+    background-color: #ffffff;
+    height: 400px;
+}
+
+.intro-info-content{
+    position: relative;
+    left: 15%;
+    top: 10%;
+    width: 70%;
+    height: 90%;
+}
+
+.counter-container{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.counter{
+    font-family: Roboto, monospace;
+    font-size: 35px;
+}
+
+.counter-title{
+    font-family: Roboto, monospace;
+    font-size: 35px;
+    margin-left: 10px;
+    margin-right: 100px;
+}
+
+.intro-info-content-slogan{
+    position: absolute;
+    left: 8%;
+    font-size: 65px;
+}
+
+.intro-info-content-slogan p{
+    line-height: 13px;
+    font-weight: bold;
+}
+
+.intro-info-content-slogan button{
+    color: white;
+    background-color: #4285F4;
+    border: 0;
+    border-radius: 5px;
+    font-size: 28px;
+    font-family: Roboto, serif;
+    margin-left: 140px;
+}
+
+.intro-info-content-side-slogan{
+    position: absolute;
+    left: 58%;
+    top: 15%;
+    font-size: 24px;
+}
+
+
+.some-activity{
+    background-color: #f2f2f2;
+    grid-area: some-activity;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+}
+
+/* -----------------Activity Info----------------------------- */
+
+.some-activity-content {
+    width: 80%;
+    position: relative;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.free-credit-title, .customer-service-title, .estimate-tool-title{
+    width: var(--acitivity-box-width);
+    font-weight: bold;
+}
+
+.free-credit-title > p{
+    font-size: var(--title-font-size);
+}
+
+.customer-service-title > p{
+    font-size: var(--title-font-size);
+}
+
+.estimate-tool-title > p{
+    font-size: var(--title-font-size);
+}
+
+.free-credit-content, .customer-service-content, .estimate-tool-content{
+    width: var(--acitivity-box-width);
+    height: 150px;
+    word-wrap: break-word;
+    font-family: var(--info-font-family-base), monospace;
+}
+
+.free-credit-content > p{
+    color: var(--acitivity-text-color);
+    line-height: var(--line-height);
+}
+
+.customer-service-content > p{
+    color: var(--acitivity-text-color);
+    line-height: var(--line-height);
+}
+
+.estimate-tool-content > p{
+    color: var(--acitivity-text-color);
+    line-height: var(--line-height);
+}
+
+
+/* -----------------Product Info----------------------------- */
+.products-info-intro{
+    grid-area: products-info-intro;
+
+    height: 350px;
+
+}
+
+.products-info-title{
+    text-align: center;
+    font-weight: bold;
+    font-family: var(--info-font-family-base), monospace;
+    font-size: var(--title-font-size);
+}
+
+.products-info-box{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.products-info-first-box, .products-info-second-box, .products-info-third-box{
+    height: 160px;
+    background-color: #f2f2f2;
+    flex: 0 0 200px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 6px;
+}
+
+.products-info-left-space, .products-info-right-space{
+    flex: 0 0 250px;
+}
+
+/* -----------------Progress Step----------------------------- */
+
+.products-progress-step{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    margin-bottom: 30px;
+
+}
+
+.progress-container::before {
+    content: '';
+    background-color: var(--line-border-empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress {
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 40%;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.circle {
+    background-color: #fff;
+    color: #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line-border-empty);
+    transition: 0.4s ease;
+}
+
+.circle.active {
+    border-color: var(--line-border-fill);
+}
+
+.progress-btn-group{
+    display: flex;
+    justify-content: center;
+}
+
+.progress-btn {
+    background-color: var(--line-border-fill);
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.progress-btn:active {
+    transform: scale(0.98);
+}
+
+.progress-btn:focus {
+    outline: 0;
+}
+
+.progress-btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}
+
+.products-title-1, .products-title-2, .products-title-3{
+    text-align: center;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: bold;
+    color: #545454;
+}
+
+.products-description-1, .products-description-2, .products-description-3{
+    color: #707070;
+    text-align: center;
+}
+
+
+/* --------------------------Cloud Computing Intro Section-------------------------------- */
+
+.cloud-computing-intro-section{
+    grid-area: cloud-computing-intro-section;
+    margin-top: 30px;
+    height: 1750px;
+    background-color: #e7e7e7;
+    display: flex;
+    justify-content: center;
+}
+
+.cloud-computing-intro-container{
+    position: relative;
+    width: 70%;
+}
+
+.cloud-computing-intro-title{
+    font-family: var(--info-font-family-base);
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.cloud-computing-image{
+    padding-top: 20px;
+}
+
+.cloud-computing-content{
+    padding-top: 20px;
+    padding-right: 50px;
+    width: 500px;
+    height: 450px;
+    font-size: 25px;
+    font-family: "Adobe Devanagari", monospace;
+}
+
+.cloud-computing-benefit-title{
+    font-size: 30px;
+}
+
+.cloud-computing-benefit-content{
+    padding-left: 70px;
+    font-size: 25px;
+    font-family: "Adobe Devanagari", monospace;
+    font-weight: normal;
+}
+
+.cloud-computing-benefit-image{
+    padding-left: 100px;
+    padding-top: 100px;
+}
+
+
+/* scroll box slide animation */
+.box {
+    transform: translateX(-400%);
+    transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even) {
+    transform: translateX(-400%);
+}
+
+.box.show {
+    transform: translateX(0);
+}
+
+
+.footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 2px solid #e0e0e0;
+}
+
+.footer-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-container > ul{
+    list-style: none;
+}
+
+.list-title{
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Adobe Devanagari", monospace;
+}
+
+.list-content{
+    font-size: 14px;
+    line-height: 32px;
+    font-family: "Adobe Devanagari", monospace;
+}
+
+.footer-divide-line{
+    width: 100%;
+    border: 1px solid #e0e0e0;
+}
+
+#author{
+    font-size: 30px;
+    text-align: center;
+}

@@ -1,0 +1,260 @@
+/* Container*/
+.container{
+    max-width: 100%;
+    display: grid;
+    grid-template-areas:
+        'navigation-bar'
+        'products-section'
+        'footer';
+}
+
+/* Navigation section */
+.navigation-bar{
+    grid-area: navigation-bar;
+    display: flex;
+    border-bottom: 1px gray solid;
+    gap: 10vw ;
+    height: 35px;
+    font-size: 18px;
+    justify-content: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.sticky {
+    top:0;
+    border-top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+}
+
+.navigation-bar a{
+    text-decoration: none;
+    color: #a5a5a5;
+}
+
+#company-name{
+    width: 150px;
+    font-size: 22px;
+
+}
+
+#login{
+    width: 300px;
+}
+
+
+/* -----------------Search box----------------------------- */
+.search {
+    width: 140px;
+    position: relative;
+    height: 16px;
+    box-sizing: border-box;
+}
+
+.search .input {
+    background-color: #fff;
+    border: 1px gray solid;
+    font-size: 12px;
+    padding: 15px;
+    height: 12px;
+    width: 12px;
+    transition: width 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px gray solid;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 32px;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn:focus,
+.input:focus {
+    outline: none;
+}
+
+.search.active .input {
+    width: 120px;
+}
+
+.search.active .btn {
+    transform: translateX(118px);
+}
+
+/*----------------------Login button-----------------------------*/
+
+
+.open-button {
+    border-color: #e7e7e7;
+    color: black;
+    cursor: pointer;
+    height: 30px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    border: 3px solid #f1f1f1;
+    z-index: 2;
+}
+
+/* Add styles to the form container */
+.form-container {
+    position: relative;
+    justify-content: left;
+    max-width: 280px;
+    background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 250px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .login-btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 250px;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .login-cancel {
+    background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .login-btn:hover, .open-button:hover {
+    opacity: 1;
+    background: #e7e7e7;
+}
+
+/* Products Section*/
+.products-section{
+    grid-area: products-section;
+    height: 990px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Product Container */
+.products-container{
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    width: 40%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.products-info-box{
+    height: 160px;
+    width: 180px;
+    background-color: #f2f2f2;
+    flex: 0 0 200px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 6px;
+    margin-top: 100px;
+}
+
+.products-info-box{
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+.products-info-box:hover, .products-info-box:focus, .products-info-box:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+
+.products-title-1, .products-title-2, .products-title-3{
+    padding-top: 15px;
+    text-align: center;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: bold;
+    color: #545454;
+}
+
+.products-description-1, .products-description-2, .products-description-3{
+    color: #707070;
+    text-align: center;
+}
+
+.f-r, .s-r, .t-r{
+    margin-top: 50px;
+}
+
+
+/* footer section*/
+.footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 2px solid #e0e0e0;
+    margin-top: 20px;
+}
+
+.footer-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-container > ul{
+    list-style: none;
+}
+
+.list-title{
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Adobe Devanagari", monospace;
+}
+
+.list-content{
+    font-size: 14px;
+    line-height: 32px;
+    font-family: "Adobe Devanagari", monospace;
+}
+
+.footer-divide-line{
+    width: 100%;
+    border: 1px solid #e0e0e0;
+}
+
+#author{
+    font-size: 30px;
+    text-align: center;
+}

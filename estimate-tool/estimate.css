@@ -1,0 +1,324 @@
+/* Container*/
+.container{
+    max-width: 100%;
+    display: grid;
+    grid-template-areas:
+        'navigation-bar'
+        'estimate-section'
+        'footer';
+}
+
+/* Navigation section */
+.navigation-bar{
+    grid-area: navigation-bar;
+    display: flex;
+    border-bottom: 1px gray solid;
+    gap: 10vw ;
+    height: 35px;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.sticky {
+    top:0;
+    border-top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+}
+
+.navigation-bar a{
+    text-decoration: none;
+    color: #a5a5a5;
+}
+
+#company-name{
+    width: 150px;
+    font-size: 22px;
+
+}
+
+#login{
+    width: 300px;
+}
+
+
+
+
+/* -----------------Search box----------------------------- */
+.search {
+    width: 140px;
+    position: relative;
+    height: 16px;
+    box-sizing: border-box;
+}
+
+.search .input {
+    background-color: #fff;
+    border: 1px gray solid;
+    font-size: 12px;
+    padding: 15px;
+    height: 12px;
+    width: 12px;
+    transition: width 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px gray solid;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 32px;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.btn:focus,
+.input:focus {
+    outline: none;
+}
+
+.search.active .input {
+    width: 120px;
+}
+
+.search.active .btn {
+    transform: translateX(118px);
+}
+
+
+/* estimate tool section */
+.estimate-section{
+    grid-area: estimate-section;
+    margin-top: 30px;
+    height: 950px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.estimate-form-section{
+    flex-direction: column;
+    width: 700px;
+    height: 945px;
+    background-color: #f2f2f2;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+
+/* footer section*/
+.footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 2px solid #e0e0e0;
+}
+
+.footer-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-container > ul{
+    list-style: none;
+}
+
+.list-title{
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Adobe Devanagari", monospace;
+}
+
+.list-content{
+    font-size: 14px;
+    line-height: 32px;
+    font-family: "Adobe Devanagari", monospace;
+}
+
+.footer-divide-line{
+    width: 100%;
+    border: 1px solid #e0e0e0;
+}
+
+#author{
+    font-size: 30px;
+    text-align: center;
+}
+
+.country-radio-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.country ul li{
+    color: #AAAAAA;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #333;
+}
+
+.country ul li input[type=radio]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.country ul li label{
+    display: block;
+    position: relative;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 25px 25px 25px 80px;
+    margin: 10px auto;
+    height: 20px;
+    z-index: 9;
+    cursor: pointer;
+    -webkit-transition: all 0.25s linear;
+}
+
+.country ul li:hover label{
+    color: #FFFFFF;
+}
+
+.country ul li .check{
+    display: block;
+    position: absolute;
+    border: 5px solid #AAAAAA;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    top: 30px;
+    left: 20px;
+    z-index: 5;
+    transition: border .25s linear;
+    -webkit-transition: border .25s linear;
+}
+
+.country ul li:hover .check {
+    border: 5px solid #FFFFFF;
+}
+
+.country ul li .check::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 10px;
+    width: 10px;
+    top: 5px;
+    left: 5px;
+    margin: auto;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+}
+
+input[type=radio]:checked ~ .check {
+    border: 5px solid #0d9eff;
+}
+
+input[type=radio]:checked ~ .check::before{
+    background: #0d9eff;
+}
+
+input[type=radio]:checked ~ label{
+    color: #0d9eff;
+}
+
+
+.country-q{
+    font-size: 25px;
+    margin-left: 25%;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+}
+
+.products-title{
+    text-align: center;
+    font-size: 25px;
+}
+
+.product{
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.checkbox-rect input[type="checkbox"] {
+    display: none;
+}
+.checkbox-rect input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    font: 14px/20px "Open Sans", Arial, sans-serif;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.checkbox-rect input[type="checkbox"]:hover + label:hover {
+    color: rgb(23, 86, 228);
+}
+.checkbox-rect input[type="checkbox"]:hover + label:before {
+    border: 1px solid #343a3f;
+    box-shadow: 2px 1px 0 #343a3f;
+}
+.checkbox-rect input[type="checkbox"] + label:last-child {
+    margin-bottom: 0;
+}
+.checkbox-rect input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid #343a3f;
+    border-radius: 0.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 0.2s, background 0.2s ease-in-out;
+    transition: all 0.2s, background 0.2s ease-in-out;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: -2px -1px 0 #343a3f;
+    background: #f3f3f3;
+}
+.checkbox-rect input[type="checkbox"]:checked + label:before {
+    border: 2px solid #fff;
+    border-radius: 0.3em;
+    background: #0d9eff;
+    box-shadow: 2px 1px 0 #50565a;
+}
+
+.total{
+    text-align: center;
+    font-size: 30px;
+}
+
+#core{
+    visibility: hidden;
+}
+
+#space{
+    visibility: hidden;
+}
+
+#database{
+    visibility: hidden;
+}
